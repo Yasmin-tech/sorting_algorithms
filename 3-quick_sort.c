@@ -22,7 +22,7 @@ void quick_sort(int *array, size_t size)
 	int low_index = 0;
 	int high_index = size - 1;
 
-	if (array == NULL || size <  2)
+	if (array == NULL || size < 2)
 		return;
 
 	quick_sort_recursive(array, low_index, high_index, size);
@@ -76,18 +76,21 @@ size_t lomutoPartition(int *array, int low_index, int high_index, size_t size)
 		if (array[j] < pivot_value)
 		{
 			i++;
-			swap_element_in_array(&array[i], &array[j]);
 
 			if (i != j)
+			{
+				swap_element_in_array(&array[i], &array[j]);
 				print_array(array, size);
+			}
 		}
 		j++;
 	}
 	i++;
-	swap_element_in_array(&array[i], &array[high_index]);
 	if (i != j - 1)
+	{
+		swap_element_in_array(&array[i], &array[high_index]);
 		print_array(array, size);
-
+	}
 	return (i);
 }
 
