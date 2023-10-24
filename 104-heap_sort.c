@@ -23,7 +23,7 @@ void heap_sort(int *array, size_t size)
 		return;
 	/* Build the Max Heap */
 
-	for (i = size / 2; i < size; i--)
+	for (i = size / 2 - 1; i < size; i--)
 	{
 		heapify(array, size, i, size);
 	}
