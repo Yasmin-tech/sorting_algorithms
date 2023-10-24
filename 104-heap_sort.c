@@ -23,7 +23,7 @@ void heap_sort(int *array, size_t size)
 		return;
 	/* Build the Max Heap */
 
-	for (i = size / 2 - 1; i < size; i--)
+	for (i = size / 2 - 1; i != (size_t) -1; i--)
 	{
 		heapify(array, size, i, size);
 	}
@@ -31,7 +31,7 @@ void heap_sort(int *array, size_t size)
 	/* sort the heap, by swap array[0] and array[size--] */
 	/* after each swap we have to heapify and make it a max heap again*/
 
-	for (i = size - 1; i < size; i--)
+	for (i = size - 1; i != (size_t) -1; i--)
 	{
 		swap_element_in_array(&array[0], &array[i]);
 		print_array(array, size);
