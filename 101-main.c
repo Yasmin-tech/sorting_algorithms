@@ -43,9 +43,10 @@ int main(void)
     listint_t *list;
     int array[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
     int arr2[] = {7, 5, 2};
-    size_t n = sizeof(arr2) / sizeof(arr2[0]);
+    int arr3[] = {-1, 5, 6};
+    size_t n = sizeof(arr3) / sizeof(arr3[0]);
 
-    list = create_listint(arr2, n);
+    list = create_listint(arr3, n);
     if (!list)
         return (1);
     print_list(list);

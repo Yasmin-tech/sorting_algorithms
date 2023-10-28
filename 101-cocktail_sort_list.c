@@ -13,10 +13,13 @@ void swap(listint_t **head, listint_t **p1, listint_t **p2);
 void cocktail_sort_list(listint_t **list)
 {
 	int swapped = 1;
-	listint_t *ptr = *list, *start = NULL, *end = NULL;
+	listint_t *ptr, *start = NULL, *end = NULL;
 
 
-	if (list == NULL || *list == NULL || (*list)->next == NULL)
+	if (list == NULL)
+		return;
+	ptr = *list;
+	if (ptr == NULL || ptr->next == NULL)
 		return;
 
 	while (swapped)
