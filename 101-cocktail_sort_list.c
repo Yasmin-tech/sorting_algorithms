@@ -40,8 +40,11 @@ void cocktail_sort_list(listint_t **list)
 			break;
 
 		swapped = 0;
-		ptr = ptr->prev->prev;
+		if (ptr->prev != NULL)
+			ptr = ptr->prev->prev;
 
+		if (!ptr)
+			break;
 		while (ptr->prev != start)
 		{
 			if (ptr->n > ptr->next->n)
@@ -49,7 +52,8 @@ void cocktail_sort_list(listint_t **list)
 				swapped = 1;
 				swap(list, &ptr, &ptr->next);
 				print_list(*list);
-				ptr = ptr->prev->prev;
+				if (ptr->prev != NULL)
+					ptr = ptr->prev->prev;
 			}
 			else
 				ptr = ptr->prev;
